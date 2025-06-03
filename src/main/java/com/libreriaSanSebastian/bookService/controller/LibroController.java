@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-
 import java.util.List;
 
 @RestController
@@ -59,7 +58,7 @@ public class LibroController {
         return ResponseEntity.notFound().build();
     }
 
-    @PatchMapping("/decrementar-stock/{id}")
+    @PutMapping("/decrementar-stock/{id}")
     public ResponseEntity<Void> decrementarStock(@PathVariable Long id) {
         if (libroService.decrementarStock(id)) {
             return ResponseEntity.ok().build();
