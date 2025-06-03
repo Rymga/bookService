@@ -22,7 +22,7 @@ public class Libro {
     @Column(nullable = false)
     private Integer stock;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "autor_id")
     private Autor autor;
 }

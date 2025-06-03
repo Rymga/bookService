@@ -3,6 +3,7 @@ package com.libreriaSanSebastian.bookService.model;
 import lombok.*;
 import jakarta.persistence.*;
 
+
 @Entity
 @Table(name = "autores")
 @Data

@@ -13,15 +13,15 @@ public class LibroService {
     private LibroRepository libroRepository;
 
     public List<Libro> listarTodos() {
-        return libroRepository.findAll();
+        return libroRepository.findAllWithAutor();
     }
 
     public Optional<Libro> buscarPorId(Long id) {
-        return libroRepository.findById(id);
+        return libroRepository.findByIdWithAutor(id);
     }
 
     public Optional<Libro> buscarPorTitulo(String titulo) {
-        return Optional.ofNullable(libroRepository.findByTitulo(titulo));
+        return Optional.ofNullable(libroRepository.findByTituloWithAutor(titulo));
     }
 
     public Libro guardar(Libro libro) {
