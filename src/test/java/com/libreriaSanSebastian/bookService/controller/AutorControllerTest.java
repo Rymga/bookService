@@ -91,7 +91,7 @@ class AutorControllerTest {
         mockMvc.perform(post("/api/v1/autores")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(autor)))
-                .andExpect(status().isOk())
+                .andExpect(status().isCreated())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.nombre").value("Gabriel"));
 
